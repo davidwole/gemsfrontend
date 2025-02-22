@@ -1,7 +1,6 @@
 import { Routes, Route } from "react-router-dom";
 import Login from "./pages/Login";
 import Dashboard from "./pages/Dashboard";
-import { useEffect } from "react";
 import BranchInfo from "./pages/BranchInfo";
 import JobApplicationForm from "./components/forms/JobApplicationForm";
 
