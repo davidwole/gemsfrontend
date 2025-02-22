@@ -1,0 +1,22 @@
+.login {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+}
+
+.login input {
+  width: 20rem;
+  padding: 1.25rem 1rem !important;
+}
+
+.login button {
+  padding: 1.25rem 8rem;
+  width: 20rem;
+}
+
+.login h1 {
+  font-size: 2rem;
+  font-weight: 650;
+  margin-block: 10rem 1rem;
+}

@@ -1,0 +1,14 @@
+.branch_item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.branch_item button:first-child {
+  margin-right: 1rem;
+}
+
+.branch_name {
+  width: 200px;
+}

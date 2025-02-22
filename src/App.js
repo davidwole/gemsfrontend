@@ -1,25 +1,18 @@
-import logo from './logo.svg';
-import './App.css';
+import { Routes, Route } from "react-router-dom";
+import Login from "./pages/Login";
+import Dashboard from "./pages/Dashboard";
+import { useEffect } from "react";
+import BranchInfo from "./pages/BranchInfo";
+import JobApplicationForm from "./components/forms/JobApplicationForm";
 
-function App() {
+export default function App() {
+  const user = JSON.parse(localStorage.getItem("user"));
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Routes>
+      <Route path="/" element={user ? <Dashboard /> : <Login />} />
+      <Route path="/branch/:id" element={<BranchInfo />} />
+      <Route path="/jobform/" element={<JobApplicationForm />} />
+    </Routes>
   );
 }
-
-export default App;

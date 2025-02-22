@@ -1,0 +1,157 @@
+/* Modal base styling */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  backdrop-filter: blur(2px);
+}
+
+.modal-container {
+  background-color: #ffffff;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  width: 400px;
+  max-width: 90vw;
+  padding: 24px;
+  animation: modal-appear 0.3s ease-out;
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+  padding-bottom: 12px;
+}
+
+.modal-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: #333333;
+  margin: 0;
+}
+
+.modal-close-button {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  font-weight: bolder;
+  cursor: pointer;
+  color: #666666;
+  transition: color 0.2s;
+}
+
+.modal-close-button:hover {
+  color: #333333;
+  cursor: pointer;
+}
+
+/* Form styling */
+.form-fields {
+  display: flex;
+  flex-direction: column;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.input-field {
+  height: 40px;
+  border: 1px solid #d1d5db;
+  padding: 1.35rem 1rem;
+  font-size: 14px;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.input-field:focus {
+  outline: none;
+  border-color: #353535;
+  box-shadow: 0 0 0 3px rgba(18, 18, 18, 0.25);
+}
+
+.input-field::placeholder {
+  color: #9ca3af;
+}
+
+/* Button styling */
+.button-group {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  margin-top: 24px;
+}
+
+.button {
+  padding: 1rem 1rem;
+  font-weight: 500;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.button-cancel {
+  background-color: #f3f4f6;
+  color: #4b5563;
+  border: 1px solid #e5e7eb;
+}
+
+.button-cancel:hover {
+  background-color: #e5e7eb;
+}
+
+.button-primary:hover {
+  background-color: #3b3b3b;
+}
+
+.button-primary:active {
+  background-color: #2f2f2f;
+}
+
+.button_delete {
+  background-color: red;
+  border-color: white;
+}
+
+.button_delete:hover {
+  background-color: rgb(249, 64, 64);
+}
+
+/* Animation */
+@keyframes modal-appear {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Focus trap and accessibility */
+.modal-container:focus {
+  outline: none;
+}
+
+/* Responsive adjustments */
+@media (max-width: 640px) {
+  .modal-container {
+    padding: 16px;
+  }
+
+  .button-group {
+    flex-direction: column;
+  }
+
+  .button {
+    width: 100%;
+  }
+}
